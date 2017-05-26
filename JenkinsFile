@@ -32,7 +32,7 @@ node {
         cd ${root}
 
         cp \$GOPATH/bin/dg-pz-workflow ${root}/dg-pz-workflow
-        tar -cvzf pz-workflow.tgz \
+        tar -cvzf dg-pz-workflow.tgz \
             dg-pz-workflow 
       """
     }
