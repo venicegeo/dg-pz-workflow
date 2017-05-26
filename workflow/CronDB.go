@@ -17,8 +17,8 @@ package workflow
 import (
 	"encoding/json"
 
-	"github.com/venicegeo/pz-gocommon/elasticsearch"
-	"github.com/venicegeo/pz-gocommon/gocommon"
+	"github.com/venicegeo/dg-pz-gocommon/elasticsearch"
+	"github.com/venicegeo/dg-pz-gocommon/gocommon"
 )
 
 // CronDB TODO

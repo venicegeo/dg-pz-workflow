@@ -27,9 +27,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/venicegeo/pz-gocommon/elasticsearch"
-	piazza "github.com/venicegeo/pz-gocommon/gocommon"
-	pzsyslog "github.com/venicegeo/pz-gocommon/syslog"
+	"github.com/venicegeo/dg-pz-gocommon/elasticsearch"
+	piazza "github.com/venicegeo/dg-pz-gocommon/gocommon"
+	pzsyslog "github.com/venicegeo/dg-pz-gocommon/syslog"
 )
 
 //---------------------------------------------------------------------------

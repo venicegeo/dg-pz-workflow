@@ -14,7 +14,7 @@
 
 package workflow
 
-import "github.com/venicegeo/pz-gocommon/elasticsearch"
+import "github.com/venicegeo/dg-pz-gocommon/elasticsearch"
 
 type ResourceDB struct {
 	service *Service

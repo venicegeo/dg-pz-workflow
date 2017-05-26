@@ -17,9 +17,9 @@ package main
 import (
 	"log"
 
-	piazza "github.com/venicegeo/pz-gocommon/gocommon"
-	pzsyslog "github.com/venicegeo/pz-gocommon/syslog"
-	pzworkflow "github.com/venicegeo/pz-workflow/workflow"
+	piazza "github.com/venicegeo/dg-pz-gocommon/gocommon"
+	pzsyslog "github.com/venicegeo/dg-pz-gocommon/syslog"
+	pzworkflow "github.com/venicegeo/dg-pz-workflow/workflow"
 )
 
 func main() {

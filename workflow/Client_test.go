@@ -17,8 +17,8 @@ package workflow
 import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
-	"github.com/venicegeo/pz-gocommon/elasticsearch"
-	"github.com/venicegeo/pz-gocommon/gocommon"
+	"github.com/venicegeo/dg-pz-gocommon/elasticsearch"
+	"github.com/venicegeo/dg-pz-gocommon/gocommon"
 )
 
 type ClientTester struct {

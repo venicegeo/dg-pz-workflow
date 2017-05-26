@@ -20,8 +20,8 @@ import (
 
 	"fmt"
 
-	piazza "github.com/venicegeo/pz-gocommon/gocommon"
-	pzsyslog "github.com/venicegeo/pz-gocommon/syslog"
+	piazza "github.com/venicegeo/dg-pz-gocommon/gocommon"
+	pzsyslog "github.com/venicegeo/dg-pz-gocommon/syslog"
 )
 
 type Client struct {

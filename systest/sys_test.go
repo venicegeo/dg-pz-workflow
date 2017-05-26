@@ -24,9 +24,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
-	"github.com/venicegeo/pz-gocommon/elasticsearch"
-	"github.com/venicegeo/pz-gocommon/gocommon"
-	pzworkflow "github.com/venicegeo/pz-workflow/workflow"
+	"github.com/venicegeo/dg-pz-gocommon/elasticsearch"
+	"github.com/venicegeo/dg-pz-gocommon/gocommon"
+	pzworkflow "github.com/venicegeo/dg-pz-workflow/workflow"
 )
 
 type WorkflowTester struct {

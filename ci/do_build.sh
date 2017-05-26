@@ -18,13 +18,7 @@ go version
 # gometalinter --install
 
 # build ourself, and go there
-go get github.com/venicegeo/pz-workflow
-cd $GOPATH/src/github.com/venicegeo/pz-workflow
+go get github.com/venicegeo/dg-pz-workflow
+cd $GOPATH/src/github.com/venicegeo/dg-pz-workflow
 
-# run unit tests w/ coverage collection
-go test -v -coverprofile=$root/workflow.cov github.com/venicegeo/pz-workflow/workflow
-go tool cover -func=$root/workflow.cov -o $root/workflow.cov.txt
-
-# lint
-# sh ci/metalinter.sh | tee $root/lint.txt
-# wc -l $root/lint.txt
+go test -v github.com/venicegeo/dg-pz-workflow/workflow
