@@ -30,7 +30,7 @@ node {
         go test -v github.com/venicegeo/dg-pz-workflow/workflow
 
         go build
-        cp dg-pz-logger ${root}/pz-logger
+        cp dg-pz-workflow ${root}/pz-workflow
         cd ${root}
 
         tar -cvzf pz-workflow.tgz \
@@ -53,7 +53,7 @@ node {
 
   stage('Reset') {
     git([
-      url: env.GIT_URL ? env.GIT_URL : 'https://github.com/venicegeo/pz-workflow',
+      url: env.GIT_URL ? env.GIT_URL : 'https://github.com/venicegeo/dg-pz-workflow',
       branch: "master"
     ])
   }
