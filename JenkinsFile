@@ -29,9 +29,10 @@ node {
 
         go test -v github.com/venicegeo/dg-pz-workflow/workflow
 
+        go build
+        cp dg-pz-logger ${root}/pz-logger
         cd ${root}
 
-        cp \$GOPATH/bin/pz-workflow ${root}/dg-pz-workflow
         tar -cvzf pz-workflow.tgz \
             pz-workflow 
       """
