@@ -1,5 +1,5 @@
-hash: 30bf1819b0aee799802f7c307ea92dc37d455f1ed180241ff4d8ea6d76196f51
-updated: 2017-03-01T15:25:19.515583711-05:00
+hash: 4298bf73ed9c92f15b6baa4bb4eadaf43719156ab30883a917c84a97934e2f41
+updated: 2017-05-26T11:43:34.333891299-04:00
 imports:
 - name: github.com/braintree/manners
   version: 82a8879fc5fd0381fa8b2d8033b19bf255252088
@@ -31,9 +31,9 @@ imports:
 - name: github.com/manucorporat/sse
   version: ee05b128a739a0fb76c7ebd3ae4810c1de808d6d
 - name: github.com/mattn/go-isatty
-  version: dda3de49cbfcec471bd7a70e6cc01fcc3ff90109
+  version: fc9e8d8ef48496124e79ae0df75490096eccf6fe
 - name: github.com/pierrec/lz4
-  version: 90290f74b1b4d9c097f0a3b3c7eba2ef3875c699
+  version: 5a3d2245f97fc249850e7802e3c01fad02a1c316
 - name: github.com/pierrec/xxHash
   version: 5a004441f897722c627870a981d02b29924215fa
   subpackages:
@@ -42,8 +42,8 @@ imports:
   version: 1f30fe9094a513ce4c700b9a54458bbb0c96996c
 - name: github.com/Shopify/sarama
   version: 0fb560e5f7fbcaee2f75e3c34174320709f69944
-- name: github.com/venicegeo/pz-gocommon
-  version: 1c7894f10140c7459a8daefc1ce8362f7f5be74b
+- name: github.com/venicegeo/dg-pz-gocommon
+  version: 3dfdc8031d3ec5f6ec03151996eafbdd4a225742
   subpackages:
   - elasticsearch
   - gocommon
@@ -56,7 +56,7 @@ imports:
   - context
   - context/ctxhttp
 - name: golang.org/x/sys
-  version: 76cc09b634294339fa19ec41b5f2a0b3932cea8b
+  version: a55a76086885b80f79961eacb876ebd8caf3868d
   subpackages:
   - unix
 - name: gopkg.in/go-playground/validator.v8
@@ -67,7 +67,7 @@ imports:
   - backoff
   - uritemplates
 - name: gopkg.in/yaml.v2
-  version: a3f3340b5840cee44f372bddb5880fcbc419b46a
+  version: cd8b52f8269e0feb286dfeef29f8fe4d5b397e0b
 testImports:
 - name: github.com/pmezard/go-difflib
   version: 792786c7400a136282c1664665ae0a8db921c6c2
