@@ -33,7 +33,7 @@ node {
 
         cp \$GOPATH/bin/dg-pz-workflow ${root}/dg-pz-workflow
         tar -cvzf pz-workflow.tgz \
-            pz-workflow 
+            dg-pz-workflow 
       """
     }
   }
