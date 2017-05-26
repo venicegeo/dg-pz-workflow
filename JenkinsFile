@@ -7,34 +7,33 @@ node {
 
   stage('Setup') {
     git([
-      url: env.GIT_URL ? env.GIT_URL : 'https://github.com/venicegeo/pz-workflow',
+      url: env.GIT_URL ? env.GIT_URL : 'https://github.com/venicegeo/dg-pz-workflow',
       branch: "master"
     ])
   }
 
   stage('Archive') {
+    deleteDir()
     withGolang {
       sh """
-        # install metalinter
-        go get -u github.com/alecthomas/gometalinter
-        gometalinter --install
+        go get github.com/braintree/manners
+        go get github.com/gin-gonic/gin
+        go get github.com/stretchr/testify/assert
+        go get gopkg.in/olivere/elastic.v3
+        go get github.com/Shopify/sarama
+        go get github.com/venicegeo/dg-pz-gocommon/gocommon
+        go get github.com/venicegeo/dg-pz-logger
 
-        # build ourself, and go there
-        go get github.com/venicegeo/pz-workflow
-        cd \$GOPATH/src/github.com/venicegeo/pz-workflow
+        go get github.com/venicegeo/dg-pz-workflow
+        cd \$GOPATH/src/github.com/venicegeo/dg-pz-workflow
 
-        go test -v -coverprofile=${root}/workflow.cov -coverpkg github.com/venicegeo/pz-workflow/workflow github.com/venicegeo/pz-workflow/workflow
-        go tool cover -func=${root}/workflow.cov -o ${root}/workflow.cov.txt
+        go test -v github.com/venicegeo/dg-pz-workflow/workflow
 
         cd ${root}
 
-        cp \$GOPATH/bin/pz-workflow ${root}/pz-workflow
+        cp \$GOPATH/bin/pz-workflow ${root}/dg-pz-workflow
         tar -cvzf pz-workflow.tgz \
-            pz-workflow \
-            *.cov \
-            *.cov.txt \
-            glide.lock \
-            glide.yaml
+            pz-workflow 
       """
     }
     mavenPush()
