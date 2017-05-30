@@ -1,9 +1,8 @@
 applications:
 - name: pz-workflow
   host: pz-workflow
-  path: pz-workflow.jar
   command: chmod 755 pz-workflow && ./pz-workflow
-  buildpack: https://github.com/cloudfoundry/java-buildpack.git 
+  buildpack: binary_buildpack
   memory: 512M
   instances: 1
   timeout: 180
