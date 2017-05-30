@@ -1,7 +1,6 @@
 applications:
 - name: pz-workflow
   host: pz-workflow
-  path: pz-workflow.jar
   command: chmod 755 pz-workflow && ./pz-workflow
   buildpack: https://github.com/cloudfoundry/java-buildpack.git 
   memory: 512M
