@@ -10,7 +10,6 @@ node {
       cd
       rm -rf dg-pz-workflow
       git clone https://github.com/venicegeo/dg-pz-workflow
-      ls -lrat
     """
   }
   stage('Archive') {
@@ -18,6 +17,8 @@ node {
       sh """
         cd
         rm -rf $GOPATH/src/github.com/venicegeo/dg-pz-workflow
+        mkdir $GOPATH/src/github.com
+        mkdir $GOPATH/src/github.com/venicegeo
         mv dg-pz-workflow/ $GOPATH/src/github.com/venicegeo/
         cd $GOPATH/src/github.com/venicegeo/dg-pz-workflow
 
