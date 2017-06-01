@@ -11,10 +11,8 @@ node {
       branch: "master"
     ])
     sh """
-      cd gopath/src/github.com
-      ls
-      cd venicegeo
-      ls
+      cd gopath/src/github.com/venicegeo
+      ls -lrat
     """
   }
   stage('Archive') {
