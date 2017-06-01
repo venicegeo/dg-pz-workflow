@@ -43,8 +43,12 @@ node {
   }
 
   stage('Staging Deploy') {
-    cfPush()
-    cfBgDeploy()
+	  try {
+	  	cfPush()
+    	cfBgDeploy()
+	  } finally {
+		  stage 'Cleanup'
+	  }	  
   }
 
   stage('Cleanup') {
