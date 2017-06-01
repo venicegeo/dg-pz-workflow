@@ -7,14 +7,14 @@ node {
 
   stage('Setup') {
     sh """
-      cd \$GOPATH/src/github.com/venicegeo
+      cd $GOPATH/src/github.com/venicegeo
       git clone https://github.com/venicegeo/dg-pz-workflow
     """
   }
   stage('Archive') {
     withGolang {
       sh """
-        cd \$GOPATH/src/github.com/venicegeo/dg-pz-workflow
+        cd $GOPATH/src/github.com/venicegeo/dg-pz-workflow
 
         go test -v github.com/venicegeo/dg-pz-workflow/workflow
 
