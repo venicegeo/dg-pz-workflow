@@ -4,31 +4,39 @@ def THREADFIX_ID = env.THREADFIX_ID ? env.THREADFIX_ID : '115'
 
 node {
   def root = pwd()
-
-  stage('Setup') {
+/*
     sh """
       cd
       ls -lrat
       rm -rf dg-pz-workflow
       git clone https://github.com/venicegeo/dg-pz-workflow
     """
+*/
+  stage('Setup') {
+
   }
-  stage('Archive') {
-    withGolang {
-      sh """
+  
+/*
         cd
         rm -rf $GOPATH/src/*
         mkdir -p $GOPATH/src/github.com/venicegeo
         mv dg-pz-workflow/ $GOPATH/src/github.com/venicegeo/
-        cd $GOPATH/src/github.com/venicegeo/dg-pz-workflow
+*/
 
+  stage('Archive') {
+    withGolang {
+      sh """
         go get github.com/braintree/manners
         go get github.com/gin-gonic/gin
         go get github.com/stretchr/testify/assert
         go get gopkg.in/olivere/elastic.v3
         go get github.com/Shopify/sarama
         go get github.com/venicegeo/dg-pz-gocommon/gocommon
-        go get github.com/venicegeo/vegertar-cron
+        go get github.com/venicegeo/dg-pz-logger
+
+        go get github.com/venicegeo/dg-pz-workflow
+        cd \$GOPATH/src/github.com/venicegeo/dg-pz-workflow
+
         go test -v github.com/venicegeo/dg-pz-workflow/workflow
 
         go build
@@ -38,8 +46,8 @@ node {
         tar -cvzf pz-workflow.tgz \
             pz-workflow 
       """
-    }
-  }
+   }
+}
 
   stage('Staging Deploy') {
 	  try {
