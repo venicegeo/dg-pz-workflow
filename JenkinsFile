@@ -11,7 +11,9 @@ node {
       branch: "master"
     ])
     sh """
-      echo $PWD
+      cd gopath/src/github.com
+      ls
+      cd venicegeo
       ls
     """
   }
