@@ -22,8 +22,13 @@ node {
         mkdir -p $GOPATH/src/github.com/venicegeo
         mv dg-pz-workflow/ $GOPATH/src/github.com/venicegeo/
         cd $GOPATH/src/github.com/venicegeo/dg-pz-workflow
-        go get
 
+        go get github.com/braintree/manners
+        go get github.com/gin-gonic/gin
+        go get github.com/stretchr/testify/assert
+        go get gopkg.in/olivere/elastic.v3
+        go get github.com/Shopify/sarama
+        go get github.com/venicegeo/dg-pz-gocommon/gocommon
         go test -v github.com/venicegeo/dg-pz-workflow/workflow
 
         go build
