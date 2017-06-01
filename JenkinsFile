@@ -13,6 +13,11 @@ node {
     """
 */
   stage('Setup') {
+  
+   git([
+      url: env.GIT_URL ? env.GIT_URL : 'https://github.com/venicegeo/dg-pz-workflow',
+      branch: "master"
+   ])
 
   }
   
