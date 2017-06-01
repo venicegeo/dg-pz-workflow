@@ -17,8 +17,8 @@ node {
       sh """
         cd
         rm -rf $GOPATH/src/github.com/venicegeo/dg-pz-workflow
-        mkdir $GOPATH/src/github.com
-        mkdir $GOPATH/src/github.com/venicegeo
+        mkdir -p $GOPATH/src/github.com
+        mkdir -p $GOPATH/src/github.com/venicegeo
         mv dg-pz-workflow/ $GOPATH/src/github.com/venicegeo/
         cd $GOPATH/src/github.com/venicegeo/dg-pz-workflow
 
