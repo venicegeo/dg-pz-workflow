@@ -9,6 +9,7 @@ node {
     sh """
       cd
       rm -rf dg-pz-workflow
+      rm -rf $GOPATH/src/github.com
       git clone https://github.com/venicegeo/dg-pz-workflow
     """
   }
