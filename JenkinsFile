@@ -8,6 +8,7 @@ node {
   stage('Setup') {
     sh """
       cd
+      ls -lrat
       rm -rf dg-pz-workflow
       git clone https://github.com/venicegeo/dg-pz-workflow
     """
@@ -20,6 +21,7 @@ node {
         mkdir -p $GOPATH/src/github.com/venicegeo
         mv dg-pz-workflow/ $GOPATH/src/github.com/venicegeo/
         cd $GOPATH/src/github.com/venicegeo/dg-pz-workflow
+        go get
 
         go test -v github.com/venicegeo/dg-pz-workflow/workflow
 
