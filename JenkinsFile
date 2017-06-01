@@ -12,10 +12,11 @@ node {
     ])
   }
   stage('Archive') {
+    dir("dg-pz-wofkflow")
     withGolang {
       sh """
-        echo $PWD
-	ls
+        cd ..
+	echo $PWD
 	mv dg-pz-workflow/ \$GOPATH/src/github.com/venicegeo/
         cd \$GOPATH/src/github.com/venicegeo/dg-pz-workflow
 
