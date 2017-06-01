@@ -8,6 +8,7 @@ node {
   stage('Setup') {
     sh """
       cd
+      rm -rf dg-pz-workflow
       git clone https://github.com/venicegeo/dg-pz-workflow
       ls -lrat
     """
