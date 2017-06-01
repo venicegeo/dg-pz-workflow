@@ -14,7 +14,9 @@ node {
   stage('Archive') {
     withGolang {
       sh """
-        go get github.com/venicegeo/dg-pz-workflow 
+	mkdir \$GOPATH/src/github.com
+	mkdir \$GOPATH/src/github.com/venicegeo
+	mv dg-pz-workflow \$GOPATH/src/github.com/venicegeo
         cd \$GOPATH/src/github.com/venicegeo/dg-pz-workflow
 
         go test -v github.com/venicegeo/dg-pz-workflow/workflow
