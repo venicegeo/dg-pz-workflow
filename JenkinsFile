@@ -6,18 +6,16 @@ node {
   def root = pwd()
 
   stage('Setup') {
-     git([
-      url: env.GIT_URL ? env.GIT_URL : 'https://github.com/venicegeo/dg-pz-workflow',
-      branch: "master"
-    ])
     sh """
-      cd /var/lib/jenkins/workspace/coastline/dg-pz-workflow
+      cd /
+      git clone https://github.com/venicegeo/dg-pz-workflow
       ls -lrat
     """
   }
   stage('Archive') {
     withGolang {
       sh """
+        mv dg-pz-workflow/ $GOPATH/src/github.com/venicegeo/
         cd $GOPATH/src/github.com/venicegeo/dg-pz-workflow
 
         go test -v github.com/venicegeo/dg-pz-workflow/workflow
