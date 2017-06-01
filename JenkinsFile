@@ -10,12 +10,14 @@ node {
       url: env.GIT_URL ? env.GIT_URL : 'https://github.com/venicegeo/dg-pz-workflow',
       branch: "master"
     ])
+    sh """
+      echo $PWD
+      ls
+    """
   }
   stage('Archive') {
-    dir("dg-pz-wofkflow")
     withGolang {
       sh """
-        cd ..
 	echo $PWD
 	mv dg-pz-workflow/ \$GOPATH/src/github.com/venicegeo/
         cd \$GOPATH/src/github.com/venicegeo/dg-pz-workflow
