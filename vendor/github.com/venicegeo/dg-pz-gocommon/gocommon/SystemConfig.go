@@ -160,10 +160,10 @@ func NewSystemConfig(serviceName ServiceName,
 		return nil, err
 	}
 
-	err = sys.runHealthChecks()
+/*	err = sys.runHealthChecks()
 	if err != nil {
 		return nil, err
-	}
+	} */
 
 	return sys, nil
 }
