@@ -9,5 +9,7 @@ applications:
   services:
       - pz-elasticsearch
       - pz-kafka
+      - pz-idam
+      - pz-servicecontroller
   env:
     LOGGER_INDEX: piazzalogger
