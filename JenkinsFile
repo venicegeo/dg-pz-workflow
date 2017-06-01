@@ -31,6 +31,7 @@ node {
 
   stage('Staging Deploy') {
     cfPush()
+    cfBgDeploy()
   }
 
   stage('Cleanup') {
