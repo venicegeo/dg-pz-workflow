@@ -26,7 +26,7 @@ const DefaultKafkaAddress = "localhost:9092"
 const DefaultPzLoggerAddress = "localhost:14600"
 const DefaultPzUuidgenAddress = "localhost:14800"
 const DefaultDomain = ".venicegeo.io"
-const DefaultProtocol = "http"
+const DefaultProtocol = "https"
 
 const waitTimeoutMs = 3000
 const waitSleepMs = 250
