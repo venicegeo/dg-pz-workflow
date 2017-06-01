@@ -93,7 +93,11 @@ func NewKit(
 		return nil, err
 	}
 
-	kit.Url = piazza.DefaultProtocol + "://" + kit.GenericServer.Sys.BindTo
+	if kit.mocking {
+		kit.Url = "http://" + kit.GenericServer.Sys.BindTo
+	} else {
+		kit.Url = piazza.DefaultProtocol + "://" + kit.GenericServer.Sys.BindTo
+	}
 
 	return kit, nil
 }
