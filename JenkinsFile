@@ -6,20 +6,14 @@ node {
   def root = pwd()
 
   stage('Setup') {
-    git([
-      url: env.GIT_URL ? env.GIT_URL : 'https://github.com/venicegeo/dg-pz-workflow',
-      branch: "master"
-    ])
     sh """
-      cd gopath/src/github.com/venicegeo
-      ls -lrat
+      cd \$GOPATH/src/github.com/venicegeo
+      git clone https://github.com/venicegeo/dg-pz-workflow
     """
   }
   stage('Archive') {
     withGolang {
       sh """
-	echo $PWD
-	mv dg-pz-workflow/ \$GOPATH/src/github.com/venicegeo/
         cd \$GOPATH/src/github.com/venicegeo/dg-pz-workflow
 
         go test -v github.com/venicegeo/dg-pz-workflow/workflow
