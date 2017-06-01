@@ -16,6 +16,7 @@ node {
     withGolang {
       sh """
         cd
+        rm -rf $GOPATH/src/github.com/venicegeo/dg-pz-workflow
         mv dg-pz-workflow/ $GOPATH/src/github.com/venicegeo/
         cd $GOPATH/src/github.com/venicegeo/dg-pz-workflow
 
