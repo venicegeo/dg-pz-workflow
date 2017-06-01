@@ -7,7 +7,7 @@ applications:
   instances: 1
   timeout: 180
   services:
-#      - pz-elasticsearch
+      - pz-elasticsearch
       - pz-kafka
   env:
     LOGGER_INDEX: piazzalogger

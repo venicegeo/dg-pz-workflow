@@ -11,35 +11,34 @@ node {
   }
 
   stage('Archive') {
+    deleteDir()
     withGolang {
       sh """
-        # install metalinter
-        go get -u github.com/alecthomas/gometalinter
-        gometalinter --install
-
-        # build ourself, and go there
         go get github.com/venicegeo/dg-pz-gocommon/gocommon
+
+        go get github.com/braintree/manners
+        go get github.com/gin-gonic/gin
+        go get github.com/stretchr/testify/assert
+        go get gopkg.in/olivere/elastic.v3
+        go get github.com/Shopify/sarama
+
         cd \$GOPATH/src/github.com/venicegeo/dg-pz-gocommon
 
-        # run unit tests w/ coverage collection
-        for i in gocommon elasticsearch kafka syslog
-        do
-          go test -v -coverprofile=${root}/\$i.cov github.com/venicegeo/dg-pz-gocommon/\$i
-          go tool cover -func=${root}/\$i.cov -o ${root}/\$i.cov.txt
-          cat ${root}/\$i.cov.txt
-        done
 
         cd ${root}
 
         tar -cvzf pz-gocommon.tgz \
-            *.cov \
-            *.cov.txt \
-            glide.lock \
-            glide.yaml
+          \$GOPATH/src/github.com/venicegeo/dg-pz-gocommon
       """
     }
-    mavenPush()
   }
+// Took out of archive step
+        /* for i in gocommon elasticsearch kafka syslog
+        do
+          cd \$i
+          go test -v
+          cd ..
+        done */
 
   stage('Cleanup') {
     deleteDir()
